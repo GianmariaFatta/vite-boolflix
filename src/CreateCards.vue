@@ -5,7 +5,9 @@ export default {
         return {
             store
         }
-    }
+    },
+
+
 }
 </script>
 
@@ -15,7 +17,11 @@ export default {
         <li>{{ movie.title }}</li>
         <li>{{ movie.original_title }}</li>
         <li>{{ movie.overview }}</li>
-        <li>{{ movie.original_language }}</li>
+        <li>
+            <img v-if="movie.original_language === 'it'" src="../src/img/flags/it.png" alt="">
+            <img v-else-if="movie.original_language === 'en'" src="../src/img/flags/en.png" alt="">
+            <p v-else>{{ movie.original_language }}</p>
+        </li>
         <li>{{ movie.vote_average }}</li>
     </ul>
 

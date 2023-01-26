@@ -10,8 +10,9 @@ export default {
   <header>
     <CreateSearchBar />
   </header>
-  <CreateCards />
   <main>
+    <h2>Movies</h2>
+    <CreateCards />
   </main>
   <footer></footer>
 </template>
