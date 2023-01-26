@@ -1,10 +1,15 @@
 <script>
-export default {}
+import CreateSearchBar from './CreateSearchBar.vue';
+export default {
+  components: { CreateSearchBar }
+}
 </script>
 
 <template>
   <header></header>
-  <main></main>
+  <main>
+    <CreateSearchBar />
+  </main>
   <footer></footer>
 </template>
 
