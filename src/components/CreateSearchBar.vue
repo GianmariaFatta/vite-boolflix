@@ -11,7 +11,8 @@ export default {
     methods: {
         Search(value) {
             if (value === "") {
-                store.movies = []
+                store.movies = [];
+                store.series = []
             }
             axios.get(`https://api.themoviedb.org/3/search/movie?api_key=c6959408b096916822c4b8a2c1c56f2b&language=it-IT&query=${value}&page=1&include_adult=false`).then(res => { store.movies = res.data.results });
             axios.get(`https://api.themoviedb.org/3/search/tv?api_key=c6959408b096916822c4b8a2c1c56f2b&language=it-IT&page=1&query=${value}&include_adult=false`).then(res => { store.series = res.data.results });
