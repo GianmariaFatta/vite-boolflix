@@ -1,8 +1,15 @@
 <script>
-import CreateSearchBar from './CreateSearchBar.vue';
-import CreateCards from './CreateCards.vue';
+import { store } from './store'
+import CreateSeriesCards from './components/CreateSeriesCards.vue';
+import CreateSearchBar from './components/CreateSearchBar.vue';
+import CreateCards from './components/CreateCards.vue';
 export default {
-  components: { CreateSearchBar, CreateCards }
+  data() {
+    return {
+      store
+    }
+  },
+  components: { CreateSearchBar, CreateCards, CreateSeriesCards }
 }
 </script>
 
@@ -11,8 +18,10 @@ export default {
     <CreateSearchBar />
   </header>
   <main>
-    <h2>Movies</h2>
+    <h2 v-if="store.movies.length > 0">Movies</h2>
     <CreateCards />
+    <h2 v-if="store.series.length > 0">Series</h2>
+    <CreateSeriesCards />
   </main>
   <footer></footer>
 </template>
