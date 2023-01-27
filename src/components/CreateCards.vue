@@ -1,6 +1,7 @@
 <script>
 import { store } from '../store'
 export default {
+    name: 'Card',
     data() {
         return {
             store
@@ -13,13 +14,13 @@ export default {
 
 <template>
 
-    <ul v-for="movie in store.movies">
+    <ul v-for="movie in store.movies" :key='movie.id'>
         <li>{{ movie.title }}</li>
         <li>{{ movie.original_title }}</li>
         <li>{{ movie.overview }}</li>
         <li>
-            <img v-if="movie.original_language === 'it'" src="../img/flags/it.png" alt="">
-            <img v-else-if="movie.original_language === 'en'" src="../img/flags/en.png" alt="">
+            <img v-if="movie.original_language === 'it'" src="../assets/img/it.png" alt="">
+            <img v-else-if="movie.original_language === 'en'" src="../assets/img/en.png" alt="">
             <p v-else>{{ movie.original_language }}</p>
         </li>
         <li>{{ movie.vote_average }}</li>

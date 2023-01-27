@@ -1,25 +1,30 @@
 <script>
-import { store } from '../store'
+import { store } from '../store';
 export default {
     data() {
         return {
             store
         }
     },
+    computed: {
+        // flagSrc() {
+        //     const url = new URL(`../assets/img/${this.store.series.original_language}.png`, import.meta.url);
+        //     return url.href;
+        // }
+    }
 
 
 }
 </script>
 
-<template>
 
-    <ul v-for="serie in store.series">
+<template>
+    <ul v-for="serie in store.series" :key='serie.id'>
         <li class="text-danger">{{ serie.name }}</li>
         <li class="text-danger">{{ serie.original_name }}</li>
         <li class="text-danger">{{ serie.overview }}</li>
-        <li>
-            <img v-if="serie.original_language === 'it'" src="../img/flags/it.png" alt="">
-            <img v-else-if="serie.original_language === 'en'" src="../img/flags/en.png" alt="">
+        <li class="text-danger">
+            <img v-if="serie.original_language === 'it'" src="../assets/img/it.png" alt="">
             <p v-else>{{ serie.original_language }}</p>
         </li>
         <li class="text-danger">{{ serie.vote_average }}</li>

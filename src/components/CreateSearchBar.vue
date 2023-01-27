@@ -1,5 +1,6 @@
 <script>
 import { store } from '../store'
+import { api } from '../store'
 import axios from 'axios';
 export default {
     data() {
@@ -8,28 +9,32 @@ export default {
             research: "",
         }
     },
-    methods: {
-        Search(value) {
-            if (value === "") {
-                store.movies = [];
-                store.series = []
-            }
-            axios.get(`https://api.themoviedb.org/3/search/movie?api_key=c6959408b096916822c4b8a2c1c56f2b&language=it-IT&query=${value}&page=1&include_adult=false`).then(res => { store.movies = res.data.results });
-            axios.get(`https://api.themoviedb.org/3/search/tv?api_key=c6959408b096916822c4b8a2c1c56f2b&language=it-IT&page=1&query=${value}&include_adult=false`).then(res => { store.series = res.data.results });
+    emits: ['term-submit']
+    // methods: {
+    //     Search(value) {
+    //         if (value === "") {
+    //             store.movies = [];
+    //             store.series = []
+    //         }
+
+    //         axios.get(`${api.baseuri}/search/movie?api_key=${api.key}&language=IT-it&query=${value}`).then(res => { store.movies = res.data.results });
+    //         axios.get(`${api.baseuri}/search/tv?api_key=${api.key}&language=IT-it&query=${value}`).then(res => { store.series = res.data.results });
 
 
 
 
-        }
+    //     }
 
-    }
+    // },
+
 }
 </script>
 
 <template>
     <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" v-model="research">
-        <button class="btn btn-outline-success" type="submit" @click.prevent="Search(research)">Search</button>
+        <input class="form-control me-2" type="search" placeholder="Search" v-model.trim="research">
+        <button class="btn btn-outline-success" type="submit"
+            @click.prevent="$emit('term-submit', research)">Search</button>
     </form>
 </template>
 
