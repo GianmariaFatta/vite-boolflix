@@ -3,8 +3,6 @@ import { store } from './store';
 import { api } from './store';
 import axios from 'axios';
 import ProductCard from './components/ProductCard.vue';
-// import CreateSeriesCards from './components/CreateSeriesCards.vue';
-// import CreateCardsMovies from './components/CreateCardsMovies.vue';
 import CreateSearchBar from './components/CreateSearchBar.vue';
 export default {
   data() {
@@ -36,7 +34,6 @@ export default {
     <ProductCard v-for="movie in store.movies" :key="movie.id" :item="movie" />
     <h2 v-if="store.series.length > 0">Series</h2>
     <ProductCard v-for="serie in store.series" :key="serie.id" :item="serie" />
-    <CreateSeriesCards />
   </main>
   <footer></footer>
 </template>

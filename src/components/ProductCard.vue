@@ -27,11 +27,6 @@ export default {
             <img v-if="hasFlag" :src="flagSrc" :alt="item.original_language">
             <div>{{ item.original_language }}</div>
         </li>
-        <!-- <li>
-            <img v-if="item.original_language === 'it'" src="../assets/img/it.png" alt="">
-            <img v-else-if="item.original_language === 'en'" src="../assets/img/en.png" alt="">
-            <p v-else>{{ item.original_language }}</p>
-        </li> -->
         <li>{{ item.vote_average }}</li>
     </ul>
 

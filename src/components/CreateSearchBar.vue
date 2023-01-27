@@ -8,23 +8,6 @@ export default {
         }
     },
     emits: ['term-submit']
-    // methods: {
-    //     Search(value) {
-    //         if (value === "") {
-    //             store.movies = [];
-    //             store.series = []
-    //         }
-
-    //         axios.get(`${api.baseuri}/search/movie?api_key=${api.key}&language=IT-it&query=${value}`).then(res => { store.movies = res.data.results });
-    //         axios.get(`${api.baseuri}/search/tv?api_key=${api.key}&language=IT-it&query=${value}`).then(res => { store.series = res.data.results });
-
-
-
-
-    //     }
-
-    // },
-
 }
 </script>
 
