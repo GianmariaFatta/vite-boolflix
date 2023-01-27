@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 import { store } from '../store'
 export default {
     name: 'createCard',
@@ -31,4 +31,4 @@ export default {
 
 <style scoped>
 
-</style>
+</style> -->

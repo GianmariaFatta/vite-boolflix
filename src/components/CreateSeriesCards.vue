@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 import { store } from '../store';
 export default {
     data() {
@@ -6,17 +6,15 @@ export default {
             store
         }
     },
-    computed: {
-        // flagSrc() {
-        //     const url = new URL(`../assets/img/${this.store.series.original_language}.png`, import.meta.url);
-        //     return url.href;
-        // }
-    }
+   
 }
 </script>
 
 
 <template>
+
+   
+
     <ul v-for="serie in store.series" :key='serie.id'>
         <li class="text-danger">{{ serie.name }}</li>
         <li class="text-danger">{{ serie.original_name }}</li>
@@ -34,4 +32,4 @@ export default {
 
 <style scoped>
 
-</style>
+</style> -->
