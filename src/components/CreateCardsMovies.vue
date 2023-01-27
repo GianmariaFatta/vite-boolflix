@@ -1,7 +1,7 @@
 <script>
 import { store } from '../store'
 export default {
-    name: 'Card',
+    name: 'createCard',
     data() {
         return {
             store

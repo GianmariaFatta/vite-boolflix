@@ -1,7 +1,5 @@
 <script>
 import { store } from '../store'
-import { api } from '../store'
-import axios from 'axios';
 export default {
     data() {
         return {

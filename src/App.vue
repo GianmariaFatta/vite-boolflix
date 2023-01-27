@@ -4,7 +4,7 @@ import { api } from './store';
 import axios from 'axios';
 import CreateSeriesCards from './components/CreateSeriesCards.vue';
 import CreateSearchBar from './components/CreateSearchBar.vue';
-import CreateCards from './components/CreateCards.vue';
+import CreateCardsMovies from './components/CreateCardsMovies.vue';
 export default {
   data() {
     return {
@@ -23,7 +23,7 @@ export default {
     }
 
   },
-  components: { CreateSearchBar, CreateCards, CreateSeriesCards }
+  components: { CreateSearchBar, CreateCardsMovies, CreateSeriesCards }
 }
 </script>
 
@@ -33,7 +33,7 @@ export default {
   </header>
   <main>
     <h2 v-if="store.movies.length > 0">Movies</h2>
-    <CreateCards />
+    <CreateCardsMovies />
     <h2 v-if="store.series.length > 0">Series</h2>
     <CreateSeriesCards />
   </main>

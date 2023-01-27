@@ -12,8 +12,6 @@ export default {
         //     return url.href;
         // }
     }
-
-
 }
 </script>
 
@@ -25,6 +23,7 @@ export default {
         <li class="text-danger">{{ serie.overview }}</li>
         <li class="text-danger">
             <img v-if="serie.original_language === 'it'" src="../assets/img/it.png" alt="">
+            <img v-else-if="serie.original_language === 'en'" src="../assets/img/en.png" alt="">
             <p v-else>{{ serie.original_language }}</p>
         </li>
         <li class="text-danger">{{ serie.vote_average }}</li>
