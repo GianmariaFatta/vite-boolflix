@@ -8,6 +8,7 @@ export default {
   data() {
     return {
       store,
+      api,
     }
   },
   methods: {
@@ -18,6 +19,11 @@ export default {
       }
       axios.get(`${api.baseuri}/search/movie?api_key=${api.key}&language=IT-it&query=${value}`).then(res => { store.movies = res.data.results });
       axios.get(`${api.baseuri}/search/tv?api_key=${api.key}&language=IT-it&query=${value}`).then(res => { store.series = res.data.results });
+    },
+    createUrl(product) {
+      const url = `${api.urlImg}${product.poster_path}`
+      console.log(url)
+      return url
     }
 
   },
@@ -31,11 +37,12 @@ export default {
   </header>
   <main>
     <h2 v-if="store.movies.length > 0">Movies</h2>
-    <ProductCard v-for="movie in store.movies" :key="movie.id" :item="movie" />
+    <ProductCard v-for="movie in store.movies" :key="movie.id" :item="movie" :url="createUrl(movie)" />
     <h2 v-if="store.series.length > 0">Series</h2>
-    <ProductCard v-for="serie in store.series" :key="serie.id" :item="serie" />
+    <ProductCard v-for="serie in store.series" :key="serie.id" :item="serie" :url="createUrl(serie)" />
   </main>
-  <footer></footer>
+  <footer>
+  </footer>
 </template>
 
 <style>

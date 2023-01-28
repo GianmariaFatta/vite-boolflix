@@ -3,6 +3,7 @@ export default {
     name: "produCard",
     props: {
         item: Object,
+        url: String,
     },
     computed: {
 
@@ -20,6 +21,9 @@ export default {
 
 <template>
     <ul>
+        <li>
+            <img :src="url" alt="">
+        </li>
         <li>{{ item.title || item.name }}</li>
         <li>{{ item.original_title || item.original_name }}</li>
         <li>{{ item.overview }}</li>
