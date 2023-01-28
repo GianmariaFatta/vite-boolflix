@@ -36,15 +36,28 @@ export default {
     <CreateSearchBar @term-submit="Search" />
   </header>
   <main>
-    <h2 v-if="store.movies.length > 0">Movies</h2>
-    <ProductCard v-for="movie in store.movies" :key="movie.id" :item="movie" :url="createUrl(movie)" />
-    <h2 v-if="store.series.length > 0">Series</h2>
-    <ProductCard v-for="serie in store.series" :key="serie.id" :item="serie" :url="createUrl(serie)" />
+    <div class="container">
+      <h2 v-if="store.movies.length > 0">Movies</h2>
+      <div class=" row display-flex justify-content-left align-items-center p-2 ">
+        <ProductCard v-for="movie in store.movies" :key="movie.id" :item="movie" :url="createUrl(movie)" />
+      </div>
+      <div class=" row display-flex justify-content-left align-items-center h-50 mt-5">
+        <h2 class="mt-5" v-if="store.series.length > 0">Series</h2>
+        <ProductCard v-for="serie in store.series" :key="serie.id" :item="serie" :url="createUrl(serie)" />
+      </div>
+    </div>
   </main>
   <footer>
   </footer>
 </template>
 
 <style>
+* {
+  list-style-type: none;
+}
 
+body {
+  background-color: #636060;
+
+}
 </style>
