@@ -31,7 +31,7 @@ export default {
             <img v-if="hasFlag" :src="flagSrc" :alt="item.original_language">
             <div>{{ item.original_language }}</div>
         </li>
-        <li>{{ item.vote_average }}</li>
+        <li>{{ Math.ceil(item.vote_average / 2) }}</li>
     </ul>
 
 </template>
