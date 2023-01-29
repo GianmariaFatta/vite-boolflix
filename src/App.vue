@@ -41,8 +41,8 @@ export default {
       <div class=" row display-flex justify-content-left align-items-center p-2 ">
         <ProductCard v-for="movie in store.movies" :key="movie.id" :item="movie" :url="createUrl(movie)" />
       </div>
-      <div class=" row display-flex justify-content-left align-items-center h-50 mt-5">
-        <h2 class="mt-5" v-if="store.series.length > 0">Series</h2>
+      <h2 class="mt-5" v-if="store.series.length > 0">Series</h2>
+      <div class=" row display-flex justify-content-start align-items-center h-50 mt-5">
         <ProductCard v-for="serie in store.series" :key="serie.id" :item="serie" :url="createUrl(serie)" />
       </div>
     </div>
@@ -58,6 +58,15 @@ export default {
 
 body {
   background-color: #636060;
+
+}
+
+.row {
+  width: 1000px;
+  height: auto;
+  gap: 15px;
+  border: 2px dashed gold;
+  flex-wrap: wrap;
 
 }
 </style>
