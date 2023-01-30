@@ -12,7 +12,7 @@ export default {
             <img class="img-fluid" src="../assets/img/BOOLFLIX.LOGO.png" alt="">
         </div>
         <div class="d-inline col-5 justify-content-end">
-            <CreateSearchBar @term-submit="term - submit"></CreateSearchBar>
+            <CreateSearchBar @term-submit="$emit('term-submit', research)"></CreateSearchBar>
         </div>
     </div>
 

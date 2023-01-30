@@ -34,12 +34,10 @@ export default {
 </script>
 
 <template>
-  <AppHeader @term-submit="Search">
+  <AppHeader @term-submit="Search()">
 
   </AppHeader>
-  <header>
-    <!-- <CreateSearchBar @term-submit="Search" /> -->
-  </header>
+
   <main>
     <div class="container">
       <h2 v-if="store.movies.length > 0">Movies</h2>
