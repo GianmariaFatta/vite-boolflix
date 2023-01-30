@@ -23,7 +23,7 @@ export default {
 </script>
 
 <template>
-    <div class="col d-flex justify-content-left align-items-center w-25">
+    <div class="col d-flex justify-content-left align-items-center m-0 p-0 w-25">
         <div class="card">
             <img class="img-fluid poster" :src="url" :alt="item.title || item.name">
 
@@ -57,8 +57,7 @@ export default {
     max-width: 100%;
     height: 80%;
     border: 2px dashed darkred;
-    padding: 0;
-
+    margin-bottom: 10px
 }
 
 img {

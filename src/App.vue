@@ -40,12 +40,12 @@ export default {
 
   <main>
     <div class="container">
-      <h2 v-if="store.movies.length > 0">Movies</h2>
-      <div class=" row display-flex justify-content-left align-items-center p-2 ">
+      <h2 class="text-white mt-5" v-if="store.movies.length > 0">Movies</h2>
+      <div class=" row display-flex justify-content-left align-items-center p-2 mt-3 ">
         <ProductCard v-for="movie in store.movies" :key="movie.id" :item="movie" :url="posterPath(movie)" />
       </div>
-      <h2 class="mt-5" v-if="store.series.length > 0">Series</h2>
-      <div class=" row display-flex justify-content-start align-items-center h-50 mt-5">
+      <h2 class="mt-5 text-white" v-if="store.series.length > 0">Series</h2>
+      <div class=" row display-flex justify-content-start align-items-center h-50 mt-3">
         <ProductCard v-for="serie in store.series" :key="serie.id" :item="serie" :url="posterPath(serie)" />
       </div>
     </div>
@@ -67,9 +67,8 @@ body {
 .row {
   width: 100%;
   height: auto;
-  gap: 15px;
   border: 2px dashed gold;
   flex-wrap: wrap;
-
+  margin-bottom: 50px
 }
 </style>

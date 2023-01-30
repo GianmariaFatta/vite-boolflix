@@ -13,7 +13,7 @@ export default {
 
 <template>
     <form class="d-flex w-100 " role="search">
-        <input class="form-control me-2 search" type="search" placeholder="Search" v-model.trim="research">
+        <input class="form-control me-2 search w-50" type="search" placeholder="Search" v-model.trim="research">
         <button class="btn btn-outline-success" type="submit"
             @click.prevent="$emit('term-submit', research)">Search</button>
     </form>
