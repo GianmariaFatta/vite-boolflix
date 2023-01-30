@@ -12,8 +12,8 @@ export default {
 </script>
 
 <template>
-    <form class="d-flex w-100 " role="search">
-        <input class="form-control me-2 search w-50" type="search" placeholder="Search" v-model.trim="research">
+    <form class="d-flex  " role="search">
+        <input class="form-control me-2 search w-75" type="search" placeholder="Search" v-model.trim="research">
         <button class="btn btn-outline-success" type="submit"
             @click.prevent="$emit('term-submit', research)">Search</button>
     </form>
@@ -23,6 +23,7 @@ export default {
 button {
     background-color: #ff0000;
     color: #fff;
+    border: none
 }
 
 button:hover {
@@ -30,7 +31,15 @@ button:hover {
     box-shadow: 0 0 10px #fff;
 }
 
+form {
+    width: 60%
+}
+
 form .search:focus {
     border-color: #ff0000
+}
+
+form button:target {
+    background-color: #ff0000;
 }
 </style>
