@@ -25,7 +25,10 @@ export default {
 <template>
     <div class="col-3 d-flex justify-content-left align-items-center ">
         <div class="card ">
+            <!-- <img v-if="src === " class=" img-fluid " src="../assets/img/boolflix-no-poster.png"
+                :alt="item.title || item.name"> -->
             <img class=" img-fluid " :src="url" :alt="item.title || item.name">
+
 
         </div>
         <div class="card-back ">
