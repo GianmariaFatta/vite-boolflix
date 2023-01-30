@@ -14,6 +14,9 @@ export default {
         flagSrc() {
             const url = new URL(`../assets/img/${this.item.original_language}.png`, import.meta.url);
             return url.href;
+        },
+        vote() {
+            return Math.ceil(this.item.vote_average / 2)
         }
     }
 }
@@ -22,7 +25,8 @@ export default {
 <template>
     <div class="col d-flex justify-content-left align-items-center w-25">
         <div class="card">
-            <img class="img-fluid poster" :src="url" alt="">
+            <img class="img-fluid poster" :src="url" :alt="item.title || item.name">
+
         </div>
         <div class="card-back ">
             <div class="text-center">
@@ -37,8 +41,10 @@ export default {
                         <img class="img-fluid flag" v-if="hasFlag" :src="flagSrc" :alt="item.original_language">
                         <div>{{ item.original_language }}</div>
                     </li>
+                    <li>
+                        <i v-for="n in 5" :class="n <= vote ? 'fa-solid' : 'fa-regular'" class=" fa-star"></i>
+                    </li>
                     <!-- <li class="text-danger">Overview: {{ item.overview }}</li> -->
-                    <li>{{ Math.ceil(item.vote_average / 2) }}</li>
                 </ul>
             </div>
         </div>
