@@ -3,7 +3,8 @@ import { store } from './store';
 import { api } from './store';
 import axios from 'axios';
 import ProductCard from './components/ProductCard.vue';
-import CreateSearchBar from './components/CreateSearchBar.vue';
+// import CreateSearchBar from './components/CreateSearchBar.vue';
+import AppHeader from './components/AppHeader.vue';
 export default {
   data() {
     return {
@@ -28,13 +29,16 @@ export default {
     }
 
   },
-  components: { CreateSearchBar, ProductCard }
+  components: { ProductCard, AppHeader }
 }
 </script>
 
 <template>
+  <AppHeader @term-submit="Search">
+
+  </AppHeader>
   <header>
-    <CreateSearchBar @term-submit="Search" />
+    <!-- <CreateSearchBar @term-submit="Search" /> -->
   </header>
   <main>
     <div class="container">

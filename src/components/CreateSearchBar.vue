@@ -12,7 +12,7 @@ export default {
 </script>
 
 <template>
-    <form class="d-flex w-25 " role="search">
+    <form class="d-flex w-100 " role="search">
         <input class="form-control me-2 search" type="search" placeholder="Search" v-model.trim="research">
         <button class="btn btn-outline-success" type="submit"
             @click.prevent="$emit('term-submit', research)">Search</button>
