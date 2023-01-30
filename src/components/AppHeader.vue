@@ -7,7 +7,7 @@ export default {
 </script>
 
 <template>
-    <div class="row d-flex  align-items-center justify-content-between ">
+    <div class="row d-flex  align-items-center justify-content-between g-0 ">
         <div class="col-6 mt-">
             <img class="img-fluid ms-3" src="../assets/img/BOOLFLIX.LOGO.png" alt="">
         </div>
@@ -22,6 +22,6 @@ export default {
 .row {
     background-color: #000;
     height: 150px;
-    /* padding: 5px; */
+    width: 100%;
 }
 </style>

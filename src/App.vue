@@ -41,11 +41,11 @@ export default {
   <main>
     <div class="container">
       <h2 class="text-white mt-5" v-if="store.movies.length > 0">Movies</h2>
-      <div class=" row display-flex justify-content-left align-items-center p-2 mt-3 ">
+      <div class=" row d-flex justify-content-left align-items-center  ">
         <ProductCard v-for="movie in store.movies" :key="movie.id" :item="movie" :url="posterPath(movie)" />
       </div>
       <h2 class="mt-5 text-white" v-if="store.series.length > 0">Series</h2>
-      <div class=" row display-flex justify-content-start align-items-center h-50 mt-3">
+      <div class=" row d-flex justify-content-start align-items-center ">
         <ProductCard v-for="serie in store.series" :key="serie.id" :item="serie" :url="posterPath(serie)" />
       </div>
     </div>
@@ -66,9 +66,9 @@ body {
 
 .row {
   width: 100%;
-  height: auto;
-  border: 2px dashed gold;
+  /* border: 2px dashed gold; */
   flex-wrap: wrap;
-  margin-bottom: 50px
+  margin-bottom: 50px;
+
 }
 </style>

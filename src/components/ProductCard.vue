@@ -23,13 +23,13 @@ export default {
 </script>
 
 <template>
-    <div class="col d-flex justify-content-left align-items-center m-0 p-0 w-25">
-        <div class="card">
-            <img class="img-fluid poster" :src="url" :alt="item.title || item.name">
+    <div class="col-3 d-flex justify-content-left align-items-center ">
+        <div class="card ">
+            <img class=" img-fluid " :src="url" :alt="item.title || item.name">
 
         </div>
         <div class="card-back ">
-            <div class="text-center">
+            <div class="">
                 <ul class="text-center p-3">
                     <li>Titolo: {{ item.title || item.name }}</li>
                     <li v-if="(!item.title && !item.name)">Titolo Originale: {{
@@ -53,16 +53,17 @@ export default {
 
 <style scoped lang="scss" >
 .card {
-    min-width: 200px;
-    max-width: 100%;
+    // min-width: 200px;
+    width: 100%;
     height: 80%;
-    border: 2px dashed darkred;
-    margin-bottom: 10px
+    // border: 2px dashed darkred;
+    margin-bottom: 10px;
+
 }
 
 img {
-    width: 200px;
-    height: 300px;
+    width: 100%;
+    height: 450px;
 }
 
 .flag {
@@ -78,26 +79,26 @@ img {
     color: #fff;
     display: none;
     overflow: auto;
-    padding: 5px;
     text-align: center;
 }
 
-.col:hover {
+.col-3:hover {
     .card {
         display: none
     }
 
     .card-back {
         display: block;
-        width: 200px;
-        height: 300px;
-        border: 2px dashed blue;
+        width: 100%;
+        height: 450px;
+        // border: 2px dashed blue;
     }
 }
 
 
 .col {
     height: 100%;
-    width: 100%;
+    flex-wrap: wrap;
+    align-content: flex-start
 }
 </style>
