@@ -34,7 +34,7 @@ export default {
 </script>
 
 <template>
-  <AppHeader @term-submit="Search()">
+  <AppHeader @term-submit="Search">
 
   </AppHeader>
 
