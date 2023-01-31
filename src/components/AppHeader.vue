@@ -9,7 +9,7 @@ export default {
 <template>
     <div class="row d-flex  align-items-center justify-content-between g-0 ">
         <div class="col-6 d-flex ">
-            <img class="img-fluid ms-3" src="../assets/img/BOOLFLIX.LOGO.png" alt="">
+            <a href=""><img class="img-fluid ms-3" src="../assets/img/BOOLFLIX.LOGO.png" alt=""></a>
         </div>
         <div class="d-flex col-5 justify-content-end">
             <CreateSearchBar @term-submit="$emit('term-submit', $event)"></CreateSearchBar>
