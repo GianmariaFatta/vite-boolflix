@@ -22,7 +22,10 @@ export default {
       axios.get(`${api.baseuri}/search/tv?api_key=${api.key}&language=IT-it&query=${value}`).then(res => { store.series = res.data.results });
     },
     posterPath(product) {
-      const url = `${api.urlImg}${product.poster_path}`
+      let url = `${api.urlImg}${product.poster_path}`
+      if (!product.poster_path) {
+        url = "../src/assets/img/boolflix-no-poster.png"
+      }
       console.log(url)
 
       return url

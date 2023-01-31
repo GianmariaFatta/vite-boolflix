@@ -34,7 +34,7 @@ export default {
         <div class="card-back ">
             <div class="">
                 <ul class="text-center p-3">
-                    <li>Titolo: {{ item.title || item.name }}</li>
+                    <li class="h4">Titolo: {{ item.title || item.name }}</li>
                     <li v-if="(!item.title && !item.name)">Titolo Originale: {{
                         item.original_title ||
                             item.original_name
