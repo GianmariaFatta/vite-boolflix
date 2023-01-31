@@ -40,7 +40,7 @@ export default {
                     </li>
                     <li>
                         <img class="img-fluid flag" v-if="hasFlag" :src="flagSrc" :alt="item.original_language">
-                        <div>{{ item.original_language }}</div>
+                        <div v-else>{{ item.original_language }}</div>
                     </li>
                     <li>
                         <i v-for="n in 5" :class="n <= vote ? 'fa-solid' : 'fa-regular'" class=" fa-star"></i>
