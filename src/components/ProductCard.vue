@@ -25,8 +25,6 @@ export default {
 <template>
     <div class="col-3 d-flex justify-content-left align-items-center ">
         <div class="card ">
-            <!-- <img v-if="src === " class=" img-fluid " src="../assets/img/boolflix-no-poster.png"
-                :alt="item.title || item.name"> -->
             <img class=" img-fluid " :src="url" :alt="item.title || item.name">
 
 
@@ -35,7 +33,7 @@ export default {
             <div class="">
                 <ul class="text-center p-3">
                     <li class="h4">Titolo: {{ item.title || item.name }}</li>
-                    <li v-if="(!item.title && !item.name)">Titolo Originale: {{
+                    <li>Titolo Originale: {{
                         item.original_title ||
                             item.original_name
                     }}
